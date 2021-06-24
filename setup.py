@@ -21,12 +21,11 @@ setup(
     long_description_content_type = "text/markdown",
     include_package_data=True,
     python_requires='>=3.2, <4',
-    # if a cli version is available
-    # entry_points={
-    #       'console_scripts': [
-    #           'bordercrop = bordercrop.__main__:main'
-    #       ]
-    # },
+    entry_points={
+          'console_scripts': [
+              'bordercrop = bordercrop.__main__:main'
+          ]
+    },
     package_data={
         'bordercrop': ['LICENSE'],
     },
