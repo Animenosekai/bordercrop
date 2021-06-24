@@ -91,10 +91,10 @@ def borders(image, THRESHOLD: int = 5, MINIMUM_THRESHOLD_HITTING: int = 100, MIN
     # the "_" prefixed one is the first border found in the opposite analysis
 
     _top_y, bottom_y = find_border(horizontal, height, 0) # getting the 
-    _bottom_y, top_y = find_border({key: horizontal[key] for key in reversed(horizontal.keys())}, 0, height) # reversing the rows order to go from the bottom to the top
+    _bottom_y, top_y = find_border({key: horizontal[key] for key in reversed(list(horizontal.keys()))}, 0, height) # reversing the rows order to go from the bottom to the top
 
     left_x, _right_x = find_border(vertical, width, 0)
-    right_x, _left_x = find_border({key: vertical[key] for key in reversed(vertical.keys())}, 0, width)
+    right_x, _left_x = find_border({key: vertical[key] for key in reversed(list(vertical.keys()))}, 0, width)
 
     BOTTOM = min([bottom_y, _bottom_y]) # getting the higher one
     TOP = max([top_y, _top_y]) # getting the lower one
