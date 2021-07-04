@@ -4,6 +4,7 @@ bordercrop v1.0.0 (Stable)
 © Anime no Sekai — 2021
 """
 
+from collections import OrderedDict
 from bordercrop.exceptions import WrongType
 from bordercrop.utils.validate import is_url, is_file
 from bordercrop.utils.annotations import Tuple
@@ -49,8 +50,8 @@ def borders(image, THRESHOLD: int = 5, MINIMUM_THRESHOLD_HITTING: int = 100, MIN
     width, height = image.size # get the size of the image
     data = list(image.getdata()) # get a list containing the different pixels
     # initializing variables
-    horizontal = {}
-    vertical = {}
+    horizontal = OrderedDict()
+    vertical = OrderedDict()
     x, y = (0, 0)
     # getting the horizontal and the vertical rows
     for pixel in data:
